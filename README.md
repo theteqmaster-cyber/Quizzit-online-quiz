@@ -1,8 +1,7 @@
 # Easy Quizzy - Modern Online Quiz Platform 🧠
 
-A beautiful, modern, and interactive quiz website built with pure HTML, CSS, and JavaScript. No backend required!
 
-## ✨ Features
+✨ Features
 
 - **Modern UI/UX**: Beautiful gradient backgrounds, smooth animations, and responsive design
 - **Live Score Tracking**: Real-time score display in the header
@@ -139,6 +138,6 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-**Built with ❤️ by the Coding Pirates** 🏴‍☠️
+**Built with ❤️ by the Group 1 Nust Coding Pirates** 🏴‍☠️
 
 Enjoy quizzing and keep learning! 🚀
