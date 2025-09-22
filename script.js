@@ -72,6 +72,11 @@ class QuizApp {
                             options: ["Python", "Java", "JavaScript", "C++"],
                             correct: 2,
                             explanation: "JavaScript is essential for web development and runs in browsers."
+                        },
+                        {
+                            question: "ewgfgsdh",
+                            options: ["jhgf", "gfhgs"],
+                            correct: 1
                         }
                     ]
                 },
