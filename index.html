@@ -3,30 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Splash Screen</title>
+    <title>Quizzit - Modern Quiz Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body style="margin: 0; height: 100vh; display: flex; justify-content: center; align-items: center; background: linear-gradient(to right, #ff7e5f, #feb47b);">
-    <div style="text-align: center; color: white; font-family: Arial, sans-serif;">
-        <h1 style="font-size: 4em; margin: 0;">Welcome!</h1>
-        <p style="font-size: 1.5em;">This is a simple splash screen.</p>
-        <p style="font-size: 1.2em;">Enjoy your stay!</p>
-        <p style="font-size: 1.2em;">We are the coding pirates!</p>
-          <p style="font-size: 1.2em;">We are the coding pirates!</p>
-          <p style="font-size: 1.2em;">We are the coding pirates!</p>
-          <p style="font-size: 1.2em;">We are the coding pirates!</p>
-          <p style="font-size: 1.2em;">We are the coding pirates!</p>
-        
+<body>
+    <!-- Header with Live Score -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="logo"><i class="fas fa-brain"></i> Quizzit</h1>
+            <div class="score-display">
+                <div class="score-item">
+                    <i class="fas fa-trophy"></i>
+                    <span>Score: <span id="liveScore">0</span></span>
+                </div>
+                <div class="score-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Progress: <span id="progressDisplay">0/0</span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="main-container">
+        <!-- Welcome Screen -->
+        <section id="welcomeScreen" class="screen active">
+            <div class="welcome-content">
+                <div class="hero-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h2 class="hero-title">Ready to Challenge Your Mind?</h2>
+                <p class="hero-subtitle">Test your knowledge across multiple categories and track your progress!</p>
+                <button id="startBtn" class="btn btn-primary">
+                    <i class="fas fa-play"></i>
+                    Start Quiz
+                </button>
+            </div>
+        </section>
+
+        <!-- Category Selection Screen -->
+        <section id="categoryScreen" class="screen">
+            <div class="category-content">
+                <h2 class="section-title">Choose Your Category</h2>
+                <p class="section-subtitle">Select a category to begin your quiz journey</p>
+                <div id="categoryGrid" class="category-grid">
+                    <!-- Categories will be dynamically loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Screen -->
+        <section id="quizScreen" class="screen">
+            <div class="quiz-content">
+                <div class="quiz-header">
+                    <div class="category-badge" id="currentCategory">Category</div>
+                    <div class="question-counter">
+                        <span id="currentQuestion">1</span> / <span id="totalQuestions">7</span>
+                    </div>
+                </div>
+                
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressBar"></div>
+                </div>
+
+                <div class="question-container">
+                    <h3 id="questionText" class="question-text">Question will appear here</h3>
+                    <div id="answersContainer" class="answers-container">
+                        <!-- Answers will be dynamically loaded here -->
+                    </div>
+                </div>
+
+                <div class="quiz-controls">
+                    <button id="prevBtn" class="btn btn-secondary" disabled>
+                        <i class="fas fa-arrow-left"></i>
+                        Previous
+                    </button>
+                    <button id="nextBtn" class="btn btn-primary" disabled>
+                        Next
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Screen -->
+        <section id="resultsScreen" class="screen">
+            <div class="results-content">
+                <div class="results-icon" id="resultsIcon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h2 id="resultsTitle" class="results-title">Quiz Complete!</h2>
+                <div class="results-stats">
+                    <div class="stat-item">
+                        <div class="stat-value" id="finalScore">0</div>
+                        <div class="stat-label">Final Score</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="correctAnswers">0</div>
+                        <div class="stat-label">Correct Answers</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="accuracyRate">0%</div>
+                        <div class="stat-label">Accuracy</div>
+                    </div>
+                </div>
+                <div class="results-message" id="resultsMessage"></div>
+                <div class="results-actions">
+                    <button id="retryBtn" class="btn btn-secondary">
+                        <i class="fas fa-redo"></i>
+                        Try Another Category
+                    </button>
+                    <button id="homeBtn" class="btn btn-primary">
+                        <i class="fas fa-home"></i>
+                        Back to Home
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner" class="loading-spinner hidden">
+        <div class="spinner"></div>
+        <p>Loading...</p>
     </div>
-    <img src="meat.jpg" alt="meat" width="500" height="300">
-    
-    <img src="meat.jpg" alt="meat" width="500" height="300">
 
-
-    <img src="meat.jpg" alt="meat" width="500" height="300">
-
-
-    <img src="meat.jpg" alt="meat" width="500" height="300">
-
-
+    <script src="script.js"></script>
 </body>
 </html>
