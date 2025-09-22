@@ -7,8 +7,13 @@ class QuizApp {
         this.currentCategory = null;
         this.currentQuestionIndex = 0;
         this.userAnswers = [];
-        this.score = 0;
+        this.currentQuizScore = 0; // Score for current quiz session
+        this.totalScore = 0; // Cumulative score across all quizzes
+        this.completedCategories = new Set(); // Track completed categories
         this.totalQuestions = 7; // Can be easily modified
+        
+        // Load saved score from localStorage
+        this.loadSavedScore();
         
         // Initialize the application
         this.init();
@@ -177,6 +182,75 @@ class QuizApp {
         };
     }
 
+    // Load saved score from localStorage
+    loadSavedScore() {
+        const savedData = localStorage.getItem('easyQuizzyScore');
+        if (savedData) {
+            try {
+                const data = JSON.parse(savedData);
+                this.totalScore = data.totalScore || 0;
+                this.completedCategories = new Set(data.completedCategories || []);
+            } catch (error) {
+                console.log('Error loading saved score:', error);
+                this.totalScore = 0;
+                this.completedCategories = new Set();
+            }
+        }
+    }
+
+    // Save score to localStorage
+    saveScore() {
+        const dataToSave = {
+            totalScore: this.totalScore,
+            completedCategories: Array.from(this.completedCategories),
+            lastUpdated: new Date().toISOString()
+        };
+        localStorage.setItem('easyQuizzyScore', JSON.stringify(dataToSave));
+    }
+
+    // Clear saved score (for reset functionality)
+    clearSavedScore() {
+        localStorage.removeItem('easyQuizzyScore');
+        this.totalScore = 0;
+        this.completedCategories = new Set();
+        this.updateLiveScore();
+    }
+
+    // Confirm before resetting total score
+    confirmScoreReset() {
+        if (this.totalScore === 0) {
+            alert('Your score is already 0!');
+            return;
+        }
+        
+        const confirmed = confirm(
+            `Are you sure you want to reset your total score?\n\n` +
+            `Current total score: ${this.totalScore} points\n` +
+            `Categories completed: ${this.completedCategories.size}\n\n` +
+            `This action cannot be undone!`
+        );
+        
+        if (confirmed) {
+            this.clearSavedScore();
+            alert('Your total score has been reset to 0!');
+        }
+    }
+
+    // Show help screen
+    showHelp() {
+        this.previousScreen = this.currentScreen; // Remember where we came from
+        this.showScreen('help');
+    }
+
+    // Close help screen and return to previous screen
+    closeHelp() {
+        if (this.previousScreen && this.previousScreen !== 'help') {
+            this.showScreen(this.previousScreen);
+        } else {
+            this.showScreen('welcome'); // Default to welcome if no previous screen
+        }
+    }
+
     // Initialize the application
     init() {
         this.bindEvents();
@@ -190,6 +264,14 @@ class QuizApp {
         document.getElementById('startBtn').addEventListener('click', () => this.showCategorySelection());
         document.getElementById('homeBtn').addEventListener('click', () => this.resetQuiz());
         document.getElementById('retryBtn').addEventListener('click', () => this.showCategorySelection());
+        
+        // Score reset button
+        document.getElementById('resetScoreBtn').addEventListener('click', () => this.confirmScoreReset());
+        
+        // Help buttons
+        document.getElementById('helpBtn').addEventListener('click', () => this.showHelp());
+        document.getElementById('helpCloseBtn').addEventListener('click', () => this.closeHelp());
+        document.getElementById('welcomeHelpBtn').addEventListener('click', () => this.showHelp());
         
         // Quiz navigation
         document.getElementById('nextBtn').addEventListener('click', () => this.nextQuestion());
@@ -221,13 +303,23 @@ class QuizApp {
         this.quizData.categories.forEach(category => {
             const categoryCard = document.createElement('div');
             categoryCard.className = 'category-card';
+            
+            // Add completed indicator if category has been completed
+            const isCompleted = this.completedCategories.has(category.id);
+            const completedBadge = isCompleted ? '<div class="completed-badge"><i class="fas fa-check"></i> Completed</div>' : '';
+            
             categoryCard.innerHTML = `
                 <div class="category-icon">
                     <i class="${category.icon}"></i>
                 </div>
                 <h3 class="category-title">${category.title}</h3>
                 <p class="category-description">${category.description}</p>
+                ${completedBadge}
             `;
+            
+            if (isCompleted) {
+                categoryCard.classList.add('completed');
+            }
             
             categoryCard.addEventListener('click', () => this.startQuiz(category));
             categoryGrid.appendChild(categoryCard);
@@ -241,7 +333,7 @@ class QuizApp {
         this.currentCategory = category;
         this.currentQuestionIndex = 0;
         this.userAnswers = [];
-        this.score = 0;
+        this.currentQuizScore = 0; // Reset only current quiz score
         
         // Update UI elements
         document.getElementById('currentCategory').textContent = category.title;
@@ -355,17 +447,27 @@ class QuizApp {
 
     // Update live score display
     updateLiveScore() {
-        document.getElementById('liveScore').textContent = this.score;
+        document.getElementById('liveScore').textContent = this.totalScore;
     }
 
     // Calculate final score
     calculateScore() {
-        this.score = 0;
+        this.currentQuizScore = 0;
         this.userAnswers.forEach((answer, index) => {
             if (answer === this.currentCategory.questions[index].correct) {
-                this.score += 10; // 10 points per correct answer
+                this.currentQuizScore += 10; // 10 points per correct answer
             }
         });
+        
+        // Add current quiz score to total score
+        this.totalScore += this.currentQuizScore;
+        
+        // Mark category as completed
+        this.completedCategories.add(this.currentCategory.id);
+        
+        // Save the updated score
+        this.saveScore();
+        
         this.updateLiveScore();
     }
 
@@ -400,7 +502,8 @@ class QuizApp {
         const accuracy = Math.round((correctAnswers / this.totalQuestions) * 100);
         
         // Update results display
-        document.getElementById('finalScore').textContent = this.score;
+        document.getElementById('finalScore').textContent = this.currentQuizScore;
+        document.getElementById('totalScoreDisplay').textContent = this.totalScore;
         document.getElementById('correctAnswers').textContent = `${correctAnswers}/${this.totalQuestions}`;
         document.getElementById('accuracyRate').textContent = accuracy + '%';
         
@@ -426,13 +529,14 @@ class QuizApp {
         this.showScreen('results');
     }
 
-    // Reset quiz to initial state
+    // Reset quiz to initial state (but preserve total score)
     resetQuiz() {
         this.currentCategory = null;
         this.currentQuestionIndex = 0;
         this.userAnswers = [];
-        this.score = 0;
-        this.updateLiveScore();
+        this.currentQuizScore = 0;
+        // Note: totalScore is NOT reset - it persists across sessions
+        this.updateLiveScore(); // This will show the persistent total score
         document.getElementById('progressDisplay').textContent = '0/0';
         document.getElementById('progressBar').style.width = '0%';
         this.showScreen('welcome');
@@ -484,11 +588,22 @@ document.addEventListener('keydown', (e) => {
         case 'Enter':
             if (window.quizApp.currentScreen === 'quiz') {
                 document.getElementById('nextBtn').click();
+            } else if (window.quizApp.currentScreen === 'help') {
+                document.getElementById('helpCloseBtn').click();
             }
             break;
         case 'Escape':
-            if (window.quizApp.currentScreen !== 'welcome') {
+            if (window.quizApp.currentScreen === 'help') {
+                window.quizApp.closeHelp();
+            } else if (window.quizApp.currentScreen !== 'welcome') {
                 window.quizApp.resetQuiz();
+            }
+            break;
+        case 'h':
+        case 'H':
+        case '?':
+            if (window.quizApp.currentScreen !== 'help') {
+                window.quizApp.showHelp();
             }
             break;
     }

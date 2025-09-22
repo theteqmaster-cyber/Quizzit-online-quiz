@@ -1,4 +1,4 @@
-# Quizzit - Modern Online Quiz Platform 🧠
+# Easy Quizzy - Modern Online Quiz Platform 🧠
 
 A beautiful, modern, and interactive quiz website built with pure HTML, CSS, and JavaScript. No backend required!
 

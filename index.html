@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quizzit - Modern Quiz Platform</title>
+    <title>Easy Quizzy - Modern Quiz Platform</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -12,16 +12,22 @@
     <!-- Header with Live Score -->
     <header class="header">
         <div class="header-content">
-            <h1 class="logo"><i class="fas fa-brain"></i> Quizzit</h1>
+            <h1 class="logo"><i class="fas fa-brain"></i> Easy Quizzy</h1>
             <div class="score-display">
                 <div class="score-item">
                     <i class="fas fa-trophy"></i>
-                    <span>Score: <span id="liveScore">0</span></span>
+                    <span>Total Score: <span id="liveScore">0</span></span>
                 </div>
                 <div class="score-item">
                     <i class="fas fa-chart-line"></i>
                     <span>Progress: <span id="progressDisplay">0/0</span></span>
                 </div>
+                <button id="resetScoreBtn" class="btn btn-reset" title="Reset Total Score">
+                    <i class="fas fa-redo"></i>
+                </button>
+                <button id="helpBtn" class="btn btn-help" title="How to Play">
+                    <i class="fas fa-question"></i>
+                </button>
             </div>
         </div>
     </header>
@@ -40,6 +46,12 @@
                     <i class="fas fa-play"></i>
                     Start Quiz
                 </button>
+                <p class="welcome-help-link">
+                    New to Easy Quizzy? 
+                    <button id="welcomeHelpBtn" class="help-link-btn">
+                        <i class="fas fa-question-circle"></i> How to Play
+                    </button>
+                </p>
             </div>
         </section>
 
@@ -98,7 +110,11 @@
                 <div class="results-stats">
                     <div class="stat-item">
                         <div class="stat-value" id="finalScore">0</div>
-                        <div class="stat-label">Final Score</div>
+                        <div class="stat-label">Quiz Score</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalScoreDisplay">0</div>
+                        <div class="stat-label">Total Score</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-value" id="correctAnswers">0</div>
@@ -118,6 +134,67 @@
                     <button id="homeBtn" class="btn btn-primary">
                         <i class="fas fa-home"></i>
                         Back to Home
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Help Screen -->
+        <section id="helpScreen" class="screen">
+            <div class="help-content">
+                <div class="help-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h2 class="help-title">How to Play Easy Quizzy</h2>
+                
+                <div class="help-steps">
+                    <div class="help-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Choose a Category</h3>
+                            <p>Pick from Science & Technology, History & Culture, or Geography & Nature</p>
+                        </div>
+                    </div>
+                    
+                    <div class="help-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Answer Questions</h3>
+                            <p>Each category has 7 multiple-choice questions. Click on your answer!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="help-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Track Your Score</h3>
+                            <p>Earn 10 points for each correct answer. Your total score builds up across all quizzes!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="help-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Keep Playing</h3>
+                            <p>Try all categories to maximize your total score. Completed categories show a ✓ badge!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="help-tips">
+                    <h3><i class="fas fa-star"></i> Quick Tips</h3>
+                    <ul>
+                        <li><strong>Keyboard Shortcuts:</strong> Use arrow keys to navigate, Enter to select</li>
+                        <li><strong>Progress Bar:</strong> Shows how far you are in the current quiz</li>
+                        <li><strong>Score Persists:</strong> Your total score is saved even when you close the browser</li>
+                        <li><strong>Reset Option:</strong> Click the ⟲ button in header to reset your total score</li>
+                    </ul>
+                </div>
+                
+                <div class="help-actions">
+                    <button id="helpCloseBtn" class="btn btn-primary">
+                        <i class="fas fa-play"></i>
+                        Got it! Let's Play
                     </button>
                 </div>
             </div>

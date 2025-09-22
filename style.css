@@ -83,6 +83,44 @@ body {
     color: #667eea;
 }
 
+.btn-reset {
+    background: rgba(231, 76, 60, 0.1);
+    color: #e74c3c;
+    border: 2px solid #e74c3c;
+    padding: 0.5rem;
+    min-width: auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-reset:hover {
+    background: #e74c3c;
+    color: white;
+    transform: rotate(180deg);
+}
+
+.btn-help {
+    background: rgba(52, 152, 219, 0.1);
+    color: #3498db;
+    border: 2px solid #3498db;
+    padding: 0.5rem;
+    min-width: auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-help:hover {
+    background: #3498db;
+    color: white;
+    transform: scale(1.1);
+}
+
 /* Main Container */
 .main-container {
     margin-top: 100px;
@@ -154,6 +192,31 @@ body {
     color: #666;
     margin-bottom: 3rem;
     line-height: 1.6;
+}
+
+.welcome-help-link {
+    margin-top: 2rem;
+    color: #888;
+    font-size: 0.95rem;
+}
+
+.help-link-btn {
+    background: none;
+    border: none;
+    color: #667eea;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 0.95rem;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: all 0.3s ease;
+}
+
+.help-link-btn:hover {
+    color: #5a67d8;
+    transform: translateY(-1px);
 }
 
 /* Button Styles */
@@ -262,6 +325,30 @@ body {
 .category-description {
     color: #666;
     line-height: 1.5;
+}
+
+.category-card.completed {
+    border-color: #48bb78;
+    background: linear-gradient(135deg, rgba(72, 187, 120, 0.05), rgba(255, 255, 255, 0.95));
+}
+
+.completed-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #48bb78;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.category-card {
+    position: relative;
 }
 
 /* Quiz Screen */
@@ -466,6 +553,124 @@ body {
     flex-wrap: wrap;
 }
 
+/* Help Screen */
+.help-content {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    padding: 3rem;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.help-icon {
+    font-size: 3rem;
+    color: #f39c12;
+    margin-bottom: 1.5rem;
+    animation: bounce 2s infinite;
+}
+
+.help-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.help-steps {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.help-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(102, 126, 234, 0.05);
+    border-radius: 15px;
+    border-left: 4px solid #667eea;
+}
+
+.step-number {
+    background: #667eea;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
+.step-content h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.step-content p {
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.help-tips {
+    background: rgba(241, 196, 15, 0.1);
+    border: 2px solid #f1c40f;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.help-tips h3 {
+    color: #f39c12;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.help-tips ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.help-tips li {
+    padding: 0.5rem 0;
+    color: #666;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.help-tips li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #f39c12;
+    font-weight: bold;
+}
+
+.help-tips strong {
+    color: #333;
+}
+
+.help-actions {
+    text-align: center;
+}
+
 /* Loading Spinner */
 .loading-spinner {
     position: fixed;
@@ -577,5 +782,22 @@ body {
     
     .answer-option {
         padding: 1rem;
+    }
+    
+    .help-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .help-title {
+        font-size: 1.6rem;
+    }
+    
+    .help-step {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .step-number {
+        align-self: center;
     }
 }
