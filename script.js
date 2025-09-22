@@ -74,10 +74,17 @@ class QuizApp {
                             explanation: "JavaScript is essential for web development and runs in browsers."
                         },
                         {
+                            question: "What gas do humans inhale for respiration?",
+                            options: ["Oxygen", "Nitrogen", "Cardon Dioxide", "Argon"],
+                            correct: 1,
+                            explanation: "No explanation."
+                        },
+                        {
                             question: "ewgfgsdh",
                             options: ["jhgf", "gfhgs"],
                             correct: 1
                         }
+
                     ]
                 },
                 {
