@@ -113,6 +113,12 @@ class QuizApp {
                             explanation: "Straight forward"
                         },
                         {
+                              question: "Who became the first Prime Minister of independent Zimbabwe?",
+                            options: ["Joshua Nkomo", "Masotsha Ndlovu", "Robert Gabriel Mugabe", "Mbuya Nehanda"],
+                            correct: 3,
+                            explanation: "No explanation"
+                        },
+                        {
                             question: "Who painted the Mona Lisa?",
                             options: ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Michelangelo"],
                             correct: 2,
@@ -136,6 +142,13 @@ class QuizApp {
                             correct: 1,
                             explanation: "Julius Caesar was a Roman general and dictator of the Roman Empire."
                         },
+                          {
+                              question: "What is the capital city of Zimbabwe?",
+                            options: ["Harare", "Masvingo", "Ntabazinduna", "Bulawayo"],
+                            correct: 1,
+                            explanation: "Straight forward."
+                        },
+
                         {
                             question: "In which country did the Renaissance begin?",
                             options: ["France", "Germany", "Italy", "Spain"],
