@@ -107,6 +107,12 @@ class QuizApp {
                             explanation: "World War II ended in 1945 with the surrender of Japan in September."
                         },
                         {
+                              question: "When did Zimbabwe gain independence?",
+                            options: ["18 April 1987", "25 December 1999", "21 February 1980", "18 April 1980"],
+                            correct: 4,
+                            explanation: "Straight forward"
+                        },
+                        {
                             question: "Who painted the Mona Lisa?",
                             options: ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Michelangelo"],
                             correct: 2,
