@@ -46,7 +46,7 @@ class QuizApp {
                         {
                             question: "What does CPU stand for?",
                             options: ["Central Processing Unit", "Computer Personal Unit", "Central Program Unit", "Computer Processing Unit"],
-                            correct: 0,
+                            correct: 1,
                             explanation: "CPU is the main component that executes instructions in a computer."
                         },
                         {
@@ -76,19 +76,19 @@ class QuizApp {
                       {
                             question: "What gas do humans inhale for respiration?",
                             options: ["Oxygen", "Carbon Dioxide", "Argon", "Nitrogen"],
-                            correct: 1,
+                            correct: 0,
                             explanation: "No explanation."
                       },
                         {
                               question: "Which gas is used by plants to make food?",
                             options: ["Oxygen", "Carbon Dioxide", "Argon", "Nitrogen"],
-                            correct: 2,
+                            correct: 1,
                             explanation: "Carbon Dioxides provide the carbon needed to make glucose."
                         },
                          {
                               question: "Which organ in the human body pumps blood?",
                             options: ["Liver", "Lungs", "Heart", "Artery"],
-                            correct: 3,
+                            correct: 2,
                             explanation: "The heart pumps blood to deliver oxygen and nutrients to the body"
                         }
                     ]
@@ -109,13 +109,13 @@ class QuizApp {
                         {
                               question: "When did Zimbabwe gain independence?",
                             options: ["18 April 1987", "25 December 1999", "21 February 1980", "18 April 1980"],
-                            correct: 4,
+                            correct: 3,
                             explanation: "Straight forward"
                         },
                         {
                               question: "Who became the first Prime Minister of independent Zimbabwe?",
                             options: ["Joshua Nkomo", "Masotsha Ndlovu", "Robert Gabriel Mugabe", "Mbuya Nehanda"],
-                            correct: 3,
+                            correct: 2,
                             explanation: "No explanation"
                         },
                         {
@@ -145,7 +145,7 @@ class QuizApp {
                           {
                               question: "What is the capital city of Zimbabwe?",
                             options: ["Harare", "Masvingo", "Ntabazinduna", "Bulawayo"],
-                            correct: 1,
+                            correct: 0,
                             explanation: "Straight forward."
                         },
 
