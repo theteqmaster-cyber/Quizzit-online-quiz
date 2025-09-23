@@ -91,7 +91,6 @@ class QuizApp {
                             correct: 3,
                             explanation: "The heart pumps blood to deliver oxygen and nutrients to the body"
                         }
-   
                     ]
                 },
                 {
