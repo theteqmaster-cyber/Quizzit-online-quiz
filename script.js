@@ -84,7 +84,7 @@ class QuizApp {
                             options: ["Oxygen", "Carbon Dioxide", "Argon", "Nitrogen"],
                             correct: 2,
                             explanation: "Carbon Dioxides provide the carbon needed to make glucose."
-                        }
+                        },
                          {
                               question: "Which organ in the human body pumps blood?",
                             options: ["Liver", "Lungs", "Heart", "Artery"],
