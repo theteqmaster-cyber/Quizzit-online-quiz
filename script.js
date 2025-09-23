@@ -10,7 +10,7 @@ class QuizApp {
         this.currentQuizScore = 0; // Score for current quiz session
         this.totalScore = 0; // Cumulative score across all quizzes
         this.completedCategories = new Set(); // Track completed categories
-        this.totalQuestions = 8; // Can be easily modified
+        this.totalQuestions = 10; // Can be easily modified
         
         // Load saved score from localStorage
         this.loadSavedScore();
@@ -78,7 +78,19 @@ class QuizApp {
                             options: ["Oxygen", "Carbon Dioxide", "Argon", "Nitrogen"],
                             correct: 1,
                             explanation: "No explanation."
-                      }
+                      },
+                        {
+                              question: "Which gas is used by plants to make food?",
+                            options: ["Oxygen", "Carbon Dioxide", "Argon", "Nitrogen"],
+                            correct: 2,
+                            explanation: "Carbon Dioxides provide the carbon needed to make glucose."
+                        }
+                         {
+                              question: "Which organ in the human body pumps blood?",
+                            options: ["Liver", "Lungs", "Heart", "Artery"],
+                            correct: 3,
+                            explanation: "The heart pumps blood to deliver oxygen and nutrients to the body"
+                        }
    
                     ]
                 },
