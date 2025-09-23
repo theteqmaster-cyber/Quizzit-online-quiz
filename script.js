@@ -10,7 +10,7 @@ class QuizApp {
         this.currentQuizScore = 0; // Score for current quiz session
         this.totalScore = 0; // Cumulative score across all quizzes
         this.completedCategories = new Set(); // Track completed categories
-        this.totalQuestions = 7; // Can be easily modified
+        this.totalQuestions = 8; // Can be easily modified
         
         // Load saved score from localStorage
         this.loadSavedScore();
