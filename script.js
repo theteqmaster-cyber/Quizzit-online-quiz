@@ -106,12 +106,6 @@ class QuizApp {
                             correct: 1,
                             explanation: "World War II ended in 1945 with the surrender of Japan in September."
                         },
-                         {
-                              question: "When did Zimbabwe gain independence?",
-                            options: ["18 April 1987", "25 December 1999", "21 February 1980", "18 April 1980"],
-                            correct: 4,
-                            explanation: "Straight forward"
-                        },
                         {
                             question: "Who painted the Mona Lisa?",
                             options: ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Michelangelo"],
@@ -123,12 +117,6 @@ class QuizApp {
                             options: ["Colossus of Rhodes", "Lighthouse of Alexandria", "Hanging Gardens", "Temple of Artemis"],
                             correct: 1,
                             explanation: "The Lighthouse of Alexandria was one of the Seven Wonders of the Ancient World."
-                        },
-                         {
-                              question: "Who became the first Prime Minister of independent Zimbabwe?",
-                            options: ["Joshua Nkomo", "Masotsha Ndlovu", "Robert Gabriel Mugabe", "Mbuya Nehanda"],
-                            correct: 2,
-                            explanation: "No explanation"
                         },
                         {
                             question: "What was the Berlin Wall's primary purpose?",
@@ -147,12 +135,6 @@ class QuizApp {
                             options: ["France", "Germany", "Italy", "Spain"],
                             correct: 2,
                             explanation: "The Renaissance began in Italy during the 14th century."
-                        },
-                         {
-                              question: "What is the capital city of Zimbabwe?",
-                            options: ["Harare", "Masvingo", "Ntabazinduna", "Bulawayo"],
-                            correct: 2,
-                            explanation: "Carbon Dioxides provide the carbon needed to make glucose."
                         },
                         {
                             question: "Who was the first person to walk on the moon?",
