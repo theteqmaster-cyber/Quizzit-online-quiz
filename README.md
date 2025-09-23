@@ -7,7 +7,7 @@
 - **Live Score Tracking**: Real-time score display in the header
 - **Progress Indicators**: Visual progress bar and question counter
 - **3 Quiz Categories**: Science & Technology, History & Culture, Geography & Nature
-- **7 Questions per Category**: Each category contains 7 carefully crafted questions
+- **10 Questions per Category**: Each category contains 10 carefully crafted questions
 - **Interactive Animations**: Hover effects, transitions, and loading animations
 - **Keyboard Navigation**: Use arrow keys and Enter to navigate
 - **Responsive Design**: Works perfectly on desktop, tablet, and mobile
@@ -34,7 +34,7 @@
 
 1. **Welcome Screen**: Click "Start Quiz" to begin
 2. **Category Selection**: Choose from Science, History, or Geography
-3. **Take the Quiz**: Answer 7 questions in your chosen category
+3. **Take the Quiz**: Answer 10 questions in your chosen category
 4. **View Results**: See your score, accuracy, and performance feedback
 5. **Try Again**: Select another category or retry
 
