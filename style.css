@@ -45,6 +45,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
+     overflow-x: auto; /* Enable horizontal scrolling when content overflows */
+  overflow-y: hidden; /* Hide vertical scrollbar if not needed */
 }
 
 .logo {
