@@ -5,6 +5,7 @@ class QuizApp {
     constructor() {
         this.currentScreen = 'welcome';
         this.currentCategory = null;
+        this.questions.sort(() => Math.random() - 0.5);
         this.currentQuestionIndex = 0;
         this.userAnswers = [];
         this.currentQuizScore = 0; // Score for current quiz session
@@ -386,7 +387,7 @@ class QuizApp {
     // Start quiz with selected category
     startQuiz(category) {
         this.currentCategory = category;
-         questions.sort(() => Math.random() - 0.5);
+        this.questions.sort(() => Math.random() - 0.5);
         this.currentQuestionIndex = 0;
         this.userAnswers = [];
         this.currentQuizScore = 0; // Reset only current quiz score
