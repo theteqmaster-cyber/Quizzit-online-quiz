@@ -386,6 +386,7 @@ class QuizApp {
     // Start quiz with selected category
     startQuiz(category) {
         this.currentCategory = category;
+         questions.sort(() => Math.random() - 0.5);
         this.currentQuestionIndex = 0;
         this.userAnswers = [];
         this.currentQuizScore = 0; // Reset only current quiz score
@@ -397,11 +398,8 @@ class QuizApp {
         this.showQuestion();
         this.showScreen('quiz');
     }
-    // Randomize questions
-    questions.sort(() => Math.random() - 0.5);
-let currentQuestionIndex = 0;
 
-    // Display current question
+  // Display current question
     showQuestion() {
         const question = this.currentCategory.questions[this.currentQuestionIndex];
         
