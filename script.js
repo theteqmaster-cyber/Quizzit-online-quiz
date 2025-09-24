@@ -46,7 +46,7 @@ class QuizApp {
                         {
                             question: "What does CPU stand for?",
                             options: ["Central Processing Unit", "Computer Personal Unit", "Central Program Unit", "Computer Processing Unit"],
-                            correct: 1,
+                            correct: 0,
                             explanation: "CPU is the main component that executes instructions in a computer."
                         },
                         {
@@ -176,6 +176,12 @@ class QuizApp {
                             correct: 1,
                             explanation: "The Nile River in Africa is the longest river in the world at 6,650 km."
                         },
+                         {
+                            question: "What is one main benefit of the Kariba Dam to Zimbabwe?",
+                            options: ["Providing natural gas", "Producing hydroelectric power", "Mining gold", "Raising cattle"],
+                            correct: 1,
+                            explanation: "The Nile River in Africa is the longest river in the world at 6,650 km."
+                        },
                         {
                             question: "Which is the largest ocean on Earth?",
                             options: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
@@ -187,6 +193,12 @@ class QuizApp {
                             options: ["Andes", "Rocky Mountains", "Alps", "Himalayas"],
                             correct: 3,
                             explanation: "Mount Everest is part of the Himalayan mountain range."
+                        },
+                         {
+                            question: "Which of the following is a renewable natural resource in Zimbabwe?",
+                            options: ["Copper", "Forests", "Coal", "Gold"],
+                            correct: 1,
+                            explanation: "Through afforestation"
                         },
                         {
                             question: "Which country has the most time zones?",
@@ -205,6 +217,12 @@ class QuizApp {
                             options: ["Sahara Desert", "Antarctic Desert", "Arctic Desert", "Gobi Desert"],
                             correct: 1,
                             explanation: "Antarctica is technically the largest desert, being a cold desert."
+                        },
+                        {
+                            question: "Which two rivers form Zimbabwe’s northern and southern borders?",
+                            options: ["Save and Runde", "Zambezi and Limpopo", "Tokwe and Mazowe", "Manyame and Gwayi"],
+                            correct: 1,
+                            explanation: "No explanation."
                         },
                         {
                             question: "What is the deepest point in Earth's oceans?",
