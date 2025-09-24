@@ -397,6 +397,9 @@ class QuizApp {
         this.showQuestion();
         this.showScreen('quiz');
     }
+    // Randomize questions
+    questions.sort(() => Math.random() - 0.5);
+let currentQuestionIndex = 0;
 
     // Display current question
     showQuestion() {
