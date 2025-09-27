@@ -11,6 +11,14 @@ body {
     min-height: 100vh;
     color: #333;
     overflow-x: hidden;
+     background-image: url('nust.jpg'); /* Or 'images/nust.jpg' if in images folder */
+    background-size: cover; /* Ensures the image covers the whole background */
+    background-position: center center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-attachment: fixed; /* Makes the image stay fixed during scroll */
+    font-family: 'Poppins', sans-serif; /* Keep your existing font */
+    margin: 0;
+    min-height: 100vh;
 }
 
 /* Header Styles */
